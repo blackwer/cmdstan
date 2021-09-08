@@ -38,6 +38,7 @@ ifeq (default,$(origin CXX))
   endif
   ifeq ($(OS),Linux)
     CXX := g++
+    LDFLAGS+= $(shell ./lib/amd-libm/get_amd_flags.py)
   endif
   ifeq ($(OS),Windows_NT)
     CXX := g++
